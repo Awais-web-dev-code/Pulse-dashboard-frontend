@@ -1,4 +1,6 @@
-const SHEET_ID = '17H4AYfAhxFrcYTMR69Xvg-rEcRENl8JRBTTETcoFBpA'; // Replace with your actual sheet ID
+
+
+const SHEET_ID = '1jTwWd2rRJBrffNng67miCHNnMs6MmuwQH9M2oautWDw'; // Replace with your actual sheet ID
 const API_KEY = 'AIzaSyAIKw2GkYnyvX0bLrcNkgz7bpYkAN7crL8'; // Replace with your actual API Key
 const SHEET_NAME = 'Data'; // Sheet name containing the data
 
@@ -179,12 +181,12 @@ fetchData();
         const districtLabels = ['ATTOCK', 'JHELUM', 'CHAKWAL', 'RAWALPINDI'];
 
         // Data for Checked Mouzas (RASTER & VECTOR)
-        const checkedRasterData = [285, 484, 427, 0];
-        const checkedVectorData = [48, 107, 14, 0];
+        const checkedRasterData = [285, 505, 436, 0];
+        const checkedVectorData = [68, 243, 70, 0];
 
         // Data for PULSE Approved Mouzas (RASTER & VECTOR)
-        const approvedRasterData = [160, 302, 277, 0];
-        const approvedVectorData = [19, 57, 0, 0];
+        const approvedRasterData = [164, 386, 355, 0];
+        const approvedVectorData = [15, 160, 8, 0];
 
         // Total Mouzas for RASTER & VECTOR
         const totalRasterData = [447, 588, 459, 887];

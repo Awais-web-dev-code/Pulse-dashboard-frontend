@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tehsil level.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+
+<!-- header starts from here -->
+
+
+<div class="db-header">
+    <div class="log-div">
+        <img src="images/pulse-logo.png" alt="Pulse-logo">
+    </div>
+    <div class="user-div">
+        <h4>Muhammad Awais</h4>
+        <i class="fa-solid fa-user"></i>
+    </div>
+</div>
+
+
+<!-- Side-bar starts from here -->
+
+
+<div class="main-container">
+    <div class="db-sidebar">
+        <div class="sidebar-buttons">
+            <a href="/Pulse-dashboard.html">
+                <p>Overview</p>
+            </a>
+            <a href="/tehisl level.html">
+                <p style="color: #00e004;">Tehsil Level</p>
+            </a>
+            <p>Comparison</p>
+            <p>Search and Filters</p>
+            <p>Settings</p>
+        </div>
+    </div>
+
+
+    <!-- Main body starts from here -->
+
+
+    <div class="db-mainBody">
+
+
+        <!-- tabs start from here -->
+
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tablinks" onclick="openTab(event, 'Attock')">Attock</button>
+                <button class="tablinks" onclick="openTab(event, 'Jhehlum')">Jhehlum</button>
+                <button class="tablinks" onclick="openTab(event, 'Chakwal')">Chakwal</button>
+                <button class="tablinks" onclick="openTab(event, 'Rawalpindi')">Rawalpindi</button>
+                <select id="tabDropdown">
+                    <option value="R2vProgress" selected>R2V Progress</option>
+                    <option value="Attock">PULSE Approved</option>
+
+                </select>
+
+
+            </div>
+        </div>
+
+
+
+
+        <!-- Tab content starts from here -->
+
+
+        <!-- Attock tabcontent starts from  -->
+
+        <div id="Attock" class="tabcontent">
+            <!-- <div class="overview_card-div">
+                        <div class="overview_card1 cards">
+                            <div class="cards-text">
+                                <h3>Total</h3>
+                                <h4>447</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card2 cards">
+                            <div class="cards-text">
+                                <h3>Pindi Gheb</h4>
+                                    <h4>75</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card3 cards">
+                            <div class="cards-text">
+                                <h3>Jand</h3>
+                                <h4>75</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card4 cards">
+                            <div class="cards-text">
+                                <h3>Hassan Abdal</h4>
+                                    <h4>48</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card5 cards">
+                            <div class="cards-text">
+                                <h3>Hazro</h4>
+                                    <h4>81</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card6 cards">
+                            <div class="cards-text">
+                                <h3>Fateh jang</h4>
+                                    <h4>113</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card7 cards">
+                            <div class="cards-text">
+                                <h3>Attock</h4>
+                                    <h4>41</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                    </div> -->
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Attock Completion Percentage</h3>
+                <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color"></div>
+                    </div>
+                    <p class="percentage-text"> 37% </p>
+                </div>
+
+            </div>
+
+
+            <!-- barhart-div starts from here -->
+
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <canvas id="districtBarChart" width="400" height="400"></canvas>
+
+                </div>
+                <div class="barChart2-div">
+                    <h3>PULSE Approval</h3>
+                    <div class="tabs">
+                        <button class="tablinks" onclick="openTab(event, 'Checked')">Checked</button>
+                        <button class="tablinks" onclick="openTab(event, 'Approved')">Approved</button>
+                    </div>
+                    <div id="Checked" class="tabcontent">
+                        <canvas id="pulseCheckedBarChart"></canvas>
+                    </div>
+                    <div id="Approved" class="tabcontent">
+                        <canvas id="pulseApprovedBarChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Jhehlum tabcontent starts from  -->
+
+        <div id="Jhehlum" class="tabcontent">
+            <!-- <div class="overview_card-div">
+                        <div class="overview_card1 cards">
+                            <div class="cards-text">
+                                <h3>Total</h3>
+                                <h4>2734</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card2 cards">
+                            <div class="cards-text">
+                                <h3>Received</h4>
+                                    <h4>2319</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card3 cards">
+                            <div class="cards-text">
+                                <h3>Georef Mouza</h3>
+                                <h4>1233</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card4 cards">
+                            <div class="cards-text">
+                                <h3>Digitized Mouza</h4>
+                                    <h4>191</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="overview_card5 cards">
+                            <div class="cards-text">
+                                <h3>Rejected</h4>
+                                    <h4>30</h4>
+                            </div>
+                            <div class="icon-div">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                    </div> -->
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Jhehlum Completion Percentage</h3>
+                <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color" style="width: 53%;"></div>
+                    </div>
+                    <p class="percentage-text"> 53.31% </p>
+                </div>
+
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <canvas id="jhelumBarChart" width="400" height="400"></canvas>
+
+                </div>
+                <!-- <div class="barChart2-div">
+                            <h3>PULSE Approval</h3>
+                            <div class="tabs">
+                                <button class="tablinks" onclick="openTab(event, 'PULSEChecked')">PULSE Checked</button>
+                                <button class="tablinks" onclick="openTab(event, 'PULSEApproved')">PULSE
+                                    Approved</button>
+                            </div>
+                            <div id="PULSEChecked" class="tabcontent">
+                                <canvas id="pulseCheckedBarChart" class="chartCanvas"
+                                    style="width: 100%; height: 450px;"></canvas>
+                            </div>
+                            <div id="PULSEApproved" class="tabcontent">
+                                <canvas id="pulseApprovedBarChart" class="chartCanvas"></canvas>
+                            </div>
+                        </div> -->
+
+            </div>
+        </div>
+
+
+        <!-- Chakwal tabcontent starts from  -->
+
+        <div id="Chakwal" class="tabcontent">
+            <div class="overview_card-div">
+                <div class="overview_card1 cards">
+                    <div class="cards-text">
+                        <h3>Total</h3>
+                        <h4>2734</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card2 cards">
+                    <div class="cards-text">
+                        <h3>Received</h4>
+                            <h4>2319</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card3 cards">
+                    <div class="cards-text">
+                        <h3>Georef Mouza</h3>
+                        <h4>1233</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card4 cards">
+                    <div class="cards-text">
+                        <h3>Digitized Mouza</h4>
+                            <h4>191</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card5 cards">
+                    <div class="cards-text">
+                        <h3>Rejected</h4>
+                            <h4>30</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Overall Completion Percentage</h3>
+                <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color"></div>
+                    </div>
+                    <p class="percentage-text"> 6.9% </p>
+                </div>
+                <p class="completed-para">Completed: 191 / 2734</p>
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <canvas id="districtBarChart" style="width: 100%; height: 450px;"></canvas>
+
+                </div>
+                <div class="barChart2-div">
+                    <h3>PULSE Approval</h3>
+                    <div class="tabs">
+                        <button class="tablinks" onclick="openTab(event, 'PULSEChecked')">PULSE Checked</button>
+                        <button class="tablinks" onclick="openTab(event, 'PULSEApproved')">PULSE
+                            Approved</button>
+                    </div>
+                    <div id="PULSEChecked" class="tabcontent">
+                        <canvas id="pulseCheckedBarChart" class="chartCanvas"
+                            style="width: 100%; height: 450px;"></canvas>
+                    </div>
+                    <div id="PULSEApproved" class="tabcontent">
+                        <canvas id="pulseApprovedBarChart" class="chartCanvas"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Rawalpindi tabcontent starts from  -->
+
+        <div id="Rawalpindi" class="tabcontent">
+            <div class="overview_card-div">
+                <div class="overview_card1 cards">
+                    <div class="cards-text">
+                        <h3>Total</h3>
+                        <h4>2734</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card2 cards">
+                    <div class="cards-text">
+                        <h3>Received</h4>
+                            <h4>2319</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card3 cards">
+                    <div class="cards-text">
+                        <h3>Georef Mouza</h3>
+                        <h4>1233</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card4 cards">
+                    <div class="cards-text">
+                        <h3>Digitized Mouza</h4>
+                            <h4>191</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+                <div class="overview_card5 cards">
+                    <div class="cards-text">
+                        <h3>Rejected</h4>
+                            <h4>30</h4>
+                    </div>
+                    <div class="icon-div">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Overall Completion Percentage</h3>
+                <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color"></div>
+                    </div>
+                    <p class="percentage-text"> 6.9% </p>
+                </div>
+                <p class="completed-para">Completed: 191 / 2734</p>
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <canvas id="districtBarChart" style="width: 100%; height: 450px;"></canvas>
+
+                </div>
+                <div class="barChart2-div">
+                    <h3>PULSE Approval</h3>
+                    <div class="tabs">
+                        <button class="tablinks" onclick="openTab(event, 'PULSEChecked')">PULSE Checked</button>
+                        <button class="tablinks" onclick="openTab(event, 'PULSEApproved')">PULSE
+                            Approved</button>
+                    </div>
+                    <div id="PULSEChecked" class="tabcontent">
+                        <canvas id="pulseCheckedBarChart" class="chartCanvas"
+                            style="width: 100%; height: 450px;"></canvas>
+                    </div>
+                    <div id="PULSEApproved" class="tabcontent">
+                        <canvas id="pulseApprovedBarChart" class="chartCanvas"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- Javascript starts from here -->
+
+
+<script src="tehsil level.js"></script>
+
+<script>
+
+
+    // Attock barchart performance from r2v
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Labels for the districts and tehsils
+        const districtTehsilLabels = [
+            'ATTOCK', 'PINDI GHEB', 'JAND',
+            'HASSAN ABDAL', 'HAZRO', 'FATEH JANG'
+        ];
+
+        // Raster and Vector data
+        const totalRasterData = [55, 75, 75, 48, 81, 113];  // Total Raster Mouzas
+        const doneRasterData = [41, 59, 47, 38, 66, 32];    // Done Raster Mouzas
+
+        const totalVectorData = [55, 75, 75, 48, 81, 113];  // Total Vector Mouzas
+        const doneVectorData = [4, 7, 6, 13, 18, 0];        // Done Vector Mouzas
+
+        // Function to calculate the percentage
+        const getPercentage = (done, total) => total > 0 ? ((done / total) * 100).toFixed(2) + '%' : '0%';
+
+        // Get the context for the bar chart
+        const ctx = document.getElementById('districtBarChart').getContext('2d');
+
+        // Create the chart
+        const districtBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: districtTehsilLabels,
+                datasets: [
+                    {
+                        label: 'Total Raster',
+                        data: totalRasterData,
+                        backgroundColor: 'rgba(173, 216, 230, 0.3)', // Light blue
+                        borderColor: 'rgba(173, 216, 230, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    },
+                    {
+                        label: 'Done Raster',
+                        data: doneRasterData,
+                        backgroundColor: 'rgba(0, 191, 255, 0.8)', // Sky blue
+                        borderColor: 'rgba(0, 191, 255, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    },
+                    {
+                        label: 'Total Vector',
+                        data: totalVectorData,
+                        backgroundColor: 'rgba(216, 191, 216, 0.3)', // Light purple
+                        borderColor: 'rgba(216, 191, 216, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    },
+                    {
+                        label: 'Done Vector',
+                        data: doneVectorData,
+                        backgroundColor: 'rgba(148, 0, 211, 0.8)', // Dark purple
+                        borderColor: 'rgba(148, 0, 211, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Ensures the chart scales properly
+                scales: {
+                    x: {
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Attock-District'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Number of Mouzas'
+                        }
+                    }
+                },
+
+
+
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: 'black',
+                        formatter: (value, context) => {
+                            const label = context.dataset.label;
+                            if (label.includes('Done')) {  // Only show percentage for 'Done' bars
+                                const index = context.dataIndex;
+                                const total = label.includes('Raster') ? totalRasterData[index] : totalVectorData[index];
+                                return getPercentage(value, total);
+                            }
+                            return null; // No label for 'Total' bars
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    });
+
+
+
+
+    // Attock barchart performance from PULSE
+
+ // Tab functionality
+ function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Set default open tab
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementsByClassName("tablinks")[0].click();
+        });
+
+        // Chart function
+        const getPercentage = (value, total) => (total > 0 ? (value / total * 100).toFixed(2) + '%' : '0%');
+
+        const createHorizontalBarChart = (ctx, labels, rasterData, vectorData, totalRaster, totalVector) => {
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Total Raster',
+                            data: totalRaster,
+                            backgroundColor: 'rgba(173, 216, 230, 0.3)',
+                            borderColor: 'rgba(173, 216, 230, 1)',
+                            borderWidth: 1,
+                            barThickness: 20,
+                        },
+                        {
+                            label: 'Checked Raster',
+                            data: rasterData,
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            barThickness: 20,
+                        },
+                        {
+                            label: 'Total Vector',
+                            data: totalVector,
+                            backgroundColor: 'rgba(216, 191, 216, 0.3)',
+                            borderColor: 'rgba(216, 191, 216, 1)',
+                            borderWidth: 1,
+                            barThickness: 20,
+                        },
+                        {
+                            label: 'Checked Vector',
+                            data: vectorData,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1,
+                            barThickness: 20,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Mouzas'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Tehsils'
+                            },
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                padding: 10
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 0,
+                            bottom: 0
+                        }
+                    },
+                    plugins: {
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'end',
+                            color: 'black',
+                            formatter: (value, context) => {
+                                const label = context.dataset.label;
+                                if (label.includes('Total')) {
+                                    return value;
+                                } else if (label.includes('Checked')) {
+                                    const index = context.dataIndex;
+                                    const total = label.includes('Raster') ? totalRaster[index] : totalVector[index];
+                                    return getPercentage(value, total);
+                                }
+                                return null;
+                            }
+                        }
+                    }
+                },
+                plugins: [ChartDataLabels]
+            });
+        };
+
+        // Data and chart for Checked tab
+        document.addEventListener('DOMContentLoaded', function () {
+            const tehsilLabelsChecked = ['ATTOCK', 'PINDI GHEB', 'JAND', 'HASSAN ABDAL', 'HAZRO', 'FATEH JANG'];
+            const checkedRasterData = [43, 59, 47, 38, 66, 32];
+            const checkedVectorData = [4, 7, 6, 13, 18, 0];
+            const totalRasterData = [55, 75, 75, 48, 81, 113];
+            const totalVectorData = [55, 75, 75, 48, 81, 113];
+
+            const pulseCheckedCtx = document.getElementById('pulseCheckedBarChart').getContext('2d');
+            createHorizontalBarChart(pulseCheckedCtx, tehsilLabelsChecked, checkedRasterData, checkedVectorData, totalRasterData, totalVectorData);
+        });
+
+        // Data and chart for Approved tab
+        document.addEventListener('DOMContentLoaded', function () {
+            const tehsilLabelsApproved = ['ATTOCK', 'PINDI GHEB', 'JAND', 'HASSAN ABDAL', 'HAZRO', 'FATEH JANG'];
+            const approvedRasterData = [21, 22, 22, 25, 39, 7];
+            const approvedVectorData = [0, 0, 1, 10, 8, 0];
+            const totalRasterData = [55, 75, 75, 48, 81, 113];
+            const totalVectorData = [55, 75, 75, 48, 81, 113];
+
+            const pulseApprovedCtx = document.getElementById('pulseApprovedBarChart').getContext('2d');
+            createHorizontalBarChart(pulseApprovedCtx, tehsilLabelsApproved, approvedRasterData, approvedVectorData, totalRasterData, totalVectorData);
+        });
+   
+
+
+    // Jhelum barchart performance from r2v
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const tehsilLabels = ['PINDI DADAN KHAN', 'JHELUM', 'DINA', 'SOHAWAH'];
+
+        const totalRasterData = [133, 162, 135, 158]; // Total Raster Mouzas
+        const doneRasterData = [111, 143, 112, 147]; // Done Raster Mouzas
+
+        const totalVectorData = [133, 162, 135, 158]; // Total Vector Mouzas
+        const doneVectorData = [6, 58, 26, 24];      // Done Vector Mouzas
+
+        const getPercentage = (done, total) => (total > 0 ? (done / total * 100).toFixed(2) + '%' : '0%');
+
+        const ctx = document.getElementById('jhelumBarChart').getContext('2d');
+
+        const jhelumBarChart = new Chart(ctx, {
+            type: 'bar',
+
+
+            data: {
+                labels: tehsilLabels,
+                datasets: [
+                    {
+                        label: 'Total Raster',
+                        data: totalRasterData,
+                        backgroundColor: 'rgba(173, 216, 230, 0.3)', // Light blue
+                        borderColor: 'rgba(173, 216, 230, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    },
+                    {
+                        label: 'Done Raster',
+                        data: doneRasterData,
+                        backgroundColor: 'rgba(0, 191, 255, 0.8)', // Sky blue
+                        borderColor: 'rgba(0, 191, 255, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    },
+                    {
+                        label: 'Total Vector',
+                        data: totalVectorData,
+                        backgroundColor: 'rgba(216, 191, 216, 0.3)', // Light purple
+                        borderColor: 'rgba(216, 191, 216, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    },
+                    {
+                        label: 'Done Vector',
+                        data: doneVectorData,
+                        backgroundColor: 'rgba(148, 0, 211, 0.8)', // Dark purple
+                        borderColor: 'rgba(148, 0, 211, 1)',
+                        borderWidth: 1,
+                        categoryPercentage: 0.8,
+                        barPercentage: 0.8,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Jhehlum-District'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Number of Mouzas'
+                        }
+                    }
+                },
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: 'black',
+                        formatter: (value, context) => {
+                            const label = context.dataset.label;
+                            if (label.includes('Done')) {  // Only show percentage for 'Done' bars
+                                const index = context.dataIndex;
+                                const total = label.includes('Raster') ? totalRasterData[index] : totalVectorData[index];
+                                return getPercentage(value, total);
+                            }
+                            return null; // No label for 'Total' bars
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    });
+
+
+    // Jhelum barchart performance from PULSE
+
+
+
+</script>
+</body>
+
+</html>

@@ -74,51 +74,104 @@ a {
     height: 100vh;
     width: 17%;
     background-color: #292929;
-    /* border-right: 1px solid #dbdbdb; */
     position: fixed;
-    /* Change this line */
     top: 0;
-    /* Ensure it sticks to the top */
-    left: 0;
-    /* Ensure it sticks to the left */
-    overflow-y: auto;
-    /* z-index: 1; */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+   
+   
 }
 .logo-div {
     height: 10vh;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgb(59, 59, 59);
-    padding-left: 10px
-    ;
-    
-
+    padding-left: 10px;
 }
-.sidebar-buttons_div{
+.sidebar-menuDiv{
     display: flex;
     flex-direction: column;
-    /* padding-left: 20px; */
+    padding-left: 10px;
     color: white;
 }
-.sidebar-button {
-    padding: 10px 10px 20px 10px;
-    cursor: pointer;
+#overview-button {
+    color: white;
+}
+#Distict-button {
+    font-size: 14px;
+    color: rgb(185, 185, 185);
+
+}
+.menu-items-iconsDiv_overview {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.menu-items-iconsDiv_District {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+.menu-items-iconsDiv_into {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.fa-chart-line {
+    color: rgb(185, 185, 185);
+}
+.fa-lightbulb {
+    color: white;
+}
+.sidebar_intoDiv {
+    border-top: 1px solid rgb(59, 59, 59);
+    padding: 20px 20px 0px 10px;
+}
+.intro-heading {
+    color: white;
 }
 .pulse-text {
     font-size: 12px;
     text-align: left;
-    padding-left: 10px;
-    padding-right: 20px;
-    line-height: 27px;
-    margin-top: 140px;
-    padding-top: 20px;
-    border-top: 1px solid rgb(59, 59, 59);
+    line-height: 22px;
+    margin-top: 10px;
+    color: rgb(185, 185, 185);
 }
 .sidebar-buttons p {
     margin-top: 40px;
     cursor: pointer;
 }
+
+.district-list li {
+    font-size: 13px;
+    color: rgb(185, 185, 185);
+    margin-top: 15px;
+    cursor: pointer;
+    margin-left: 25px;
+    transition: color 250ms ease;
+}
+.district-list li:hover {
+    color: white;
+}
+
+.district-message h1 {
+    color: #333;
+    font-family: poppinsRegular;
+    font-size: 26px; /* Increased from 24px to 32px */
+    text-align: center;
+    margin-top: 20px;
+}
+.district-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
 
 
 /* main body style starts from here */
