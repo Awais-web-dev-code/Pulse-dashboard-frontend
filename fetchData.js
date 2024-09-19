@@ -83,7 +83,12 @@ function createDistrictBarChart(rows) {
     // Labels for districts
     const districtLabels = ['ATTOCK', 'JHELUM', 'CHAKWAL', 'RAWALPINDI'];
 
-    // Create Bar Chart with Chart.js
+
+
+
+    // Create Bar Chart for R2v perrformance for overview tabwith 
+
+
     const ctx = document.getElementById('districtBarChart').getContext('2d');
     const districtBarChart = new Chart(ctx, {
         type: 'bar',
@@ -175,127 +180,354 @@ function createApprovedChart(rows) {
 fetchData();
 
 
-     // District overview barchart performance from PULSE
+// District overview barchart performance from PULSE
 
-     document.addEventListener('DOMContentLoaded', function () {
-        const districtLabels = ['ATTOCK', 'JHELUM', 'CHAKWAL', 'RAWALPINDI'];
+document.addEventListener('DOMContentLoaded', function () {
+    const districtLabels = ['ATTOCK', 'JHELUM', 'CHAKWAL', 'RAWALPINDI'];
 
-        // Data for Checked Mouzas (RASTER & VECTOR)
-        const checkedRasterData = [285, 505, 436, 0];
-        const checkedVectorData = [68, 243, 70, 0];
+    // Data for Checked Mouzas (RASTER & VECTOR)
+    const checkedRasterData = [285, 505, 436, 0];
+    const checkedVectorData = [68, 243, 70, 0];
 
-        // Data for PULSE Approved Mouzas (RASTER & VECTOR)
-        const approvedRasterData = [164, 386, 355, 0];
-        const approvedVectorData = [15, 160, 8, 0];
+    // Data for PULSE Approved Mouzas (RASTER & VECTOR)
+    const approvedRasterData = [164, 386, 355, 0];
+    const approvedVectorData = [15, 160, 8, 0];
 
-        // Total Mouzas for RASTER & VECTOR
-        const totalRasterData = [447, 588, 459, 887];
-        const totalVectorData = [447, 588, 459, 887];
+    // Total Mouzas for RASTER & VECTOR
+    const totalRasterData = [447, 588, 459, 887];
+    const totalVectorData = [447, 588, 459, 887];
 
-        const getPercentage = (value, total) => (total > 0 ? (value / total * 100).toFixed(2) + '%' : '0%');
+    const getPercentage = (value, total) => (total > 0 ? (value / total * 100).toFixed(2) + '%' : '0%');
 
-        const createHorizontalBarChart = (ctx, labels, rasterData, vectorData, totalRaster, totalVector) => {
-            return new Chart(ctx, {
-                type: 'bar', // Use 'bar' for horizontal bars
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Total Mouza',
-                            data: totalRaster,
-                            backgroundColor: 'rgba(255, 210, 48 , 0.4)', // Light blue
-                            // borderColor: 'rgba(166, 255, 252)',
-                            borderWidth: 0.5,
-                            barThickness: 20,
+    const createHorizontalBarChart = (ctx, labels, rasterData, vectorData, totalRaster, totalVector) => {
+        return new Chart(ctx, {
+            type: 'bar', // Use 'bar' for horizontal bars
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Total Mouza',
+                        data: totalRaster,
+                        backgroundColor: 'rgba(255, 210, 48 , 0.4)', // Light blue
+                        // borderColor: 'rgba(166, 255, 252)',
+                        borderWidth: 0.5,
+                        barThickness: 20,
+                    },
+                    {
+                        label: 'Checked Raster',
+                        data: rasterData,
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 0,
+                        barThickness: 20,
+                    },
+
+
+                    {
+                        label: 'Checked Vector',
+                        data: vectorData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 0,
+                        barThickness: 20,
+                    }
+
+
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                indexAxis: 'y', // Make bars horizontal
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Mouzas'
                         },
-                        {
-                            label: 'Checked Raster',
-                            data: rasterData,
-                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 0,
-                            barThickness: 20,
-                        },
-                     
-                        
-                        {
-                            label: 'Checked Vector',
-                            data: vectorData,
-                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 0,
-                            barThickness: 20,
-                        }
-
-                  
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    indexAxis: 'y', // Make bars horizontal
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Number of Mouzas'
-                            },
-                            // Increase space between bars by adjusting the maxBarThickness and grid lines
-                            grid: {
-                                display: true // Hide grid lines for better spacing
-                            }
-                        },
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Districts'
-                            },
-                            // Increase space between bars by adjusting the bar percentage and category percentage
-                            grid: {
-                                display: false // Hide grid lines for better spacing
-                            },
-                            ticks: {
-                                padding: 10 // Increase padding between  
-                            }
+                        // Increase space between bars by adjusting the maxBarThickness and grid lines
+                        grid: {
+                            display: true // Hide grid lines for better spacing
                         }
                     },
-                    layout: {
-                        padding: {
-                            left: 10,
-                            right: 10,
-                            top: 0,
-                            bottom: 0
-                        }
-                    },
-                    plugins: {
-                        datalabels: {
-                            anchor: 'end',
-                            align: 'end',
-                            color: 'black',
-                            formatter: (value, context) => {
-                                const label = context.dataset.label;
-                                if (label.includes('Total')) {
-                                    // Show total numbers at the end of total bars
-                                    return value;
-                                } else if (label.includes('Checked')) {
-                                    // Show percentage for 'Checked' bars
-                                    const index = context.dataIndex;
-                                    const total = label.includes('Raster') ? totalRaster[index] : totalVector[index];
-                                    return getPercentage(value, total);
-                                }
-                                return null; // No label for other bars
-                            }
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Districts'
+                        },
+                        // Increase space between bars by adjusting the bar percentage and category percentage
+                        grid: {
+                            display: false // Hide grid lines for better spacing
+                        },
+                        ticks: {
+                            padding: 10 // Increase padding between  
                         }
                     }
                 },
-                plugins: [ChartDataLabels]
-            });
-        };
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 10,
+                        top: 0,
+                        bottom: 0
+                    }
+                },
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: 'black',
+                        formatter: (value, context) => {
+                            const label = context.dataset.label;
+                            if (label.includes('Total')) {
+                                // Show total numbers at the end of total bars
+                                return value;
+                            } else if (label.includes('Checked')) {
+                                // Show percentage for 'Checked' bars
+                                const index = context.dataIndex;
+                                const total = label.includes('Raster') ? totalRaster[index] : totalVector[index];
+                                return getPercentage(value, total);
+                            }
+                            return null; // No label for other bars
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    };
 
-        const pulseCheckedCtx = document.getElementById('pulseCheckedBarChart').getContext('2d');
-        const pulseApprovedCtx = document.getElementById('pulseApprovedBarChart').getContext('2d');
+    const pulseCheckedCtx = document.getElementById('pulseCheckedBarChart').getContext('2d');
+    const pulseApprovedCtx = document.getElementById('pulseApprovedBarChart').getContext('2d');
 
-        createHorizontalBarChart(pulseCheckedCtx, districtLabels, checkedRasterData, checkedVectorData, totalRasterData, totalVectorData);
-        createHorizontalBarChart(pulseApprovedCtx, districtLabels, approvedRasterData, approvedVectorData, totalRasterData, totalVectorData);
+    createHorizontalBarChart(pulseCheckedCtx, districtLabels, checkedRasterData, checkedVectorData, totalRasterData, totalVectorData);
+    createHorizontalBarChart(pulseApprovedCtx, districtLabels, approvedRasterData, approvedVectorData, totalRasterData, totalVectorData);
+});
+
+
+
+// Attock tab stats starts from here
+
+ // Attock barchart performance from r2v
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Labels for the districts and tehsils
+    const districtTehsilLabels = [
+        'ATTOCK', 'PINDI GHEB', 'JAND',
+        'HASSAN ABDAL', 'HAZRO', 'FATEH JANG'
+    ];
+
+    // Raster and Vector data
+    const totalRasterData = [55, 75, 75, 48, 81, 113];  // Total Raster Mouzas
+    const doneRasterData = [41, 59, 47, 38, 66, 32];    // Done Raster Mouzas
+
+    const totalVectorData = [55, 75, 75, 48, 81, 113];  // Total Vector Mouzas
+    const doneVectorData = [4, 7, 6, 13, 18, 0];        // Done Vector Mouzas
+
+    // Function to calculate the percentage
+    const getPercentage = (done, total) => total > 0 ? ((done / total) * 100).toFixed(2) + '%' : '0%';
+
+    // Get the context for the bar chart
+    const ctx = document.getElementById('attockR2vChart').getContext('2d');
+
+    // Create the chart
+    const attockR2vChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: districtTehsilLabels,
+            datasets: [
+                {
+                    label: 'Total Raster',
+                    data: totalRasterData,
+                    backgroundColor: 'rgba(173, 216, 230, 0.3)', // Light blue
+                    borderColor: 'rgba(173, 216, 230, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                },
+                {
+                    label: 'Done Raster',
+                    data: doneRasterData,
+                    backgroundColor: 'rgba(0, 191, 255, 0.8)', // Sky blue
+                    borderColor: 'rgba(0, 191, 255, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                },
+                {
+                    label: 'Total Vector',
+                    data: totalVectorData,
+                    backgroundColor: 'rgba(216, 191, 216, 0.3)', // Light purple
+                    borderColor: 'rgba(216, 191, 216, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                },
+                {
+                    label: 'Done Vector',
+                    data: doneVectorData,
+                    backgroundColor: 'rgba(148, 0, 211, 0.8)', // Dark purple
+                    borderColor: 'rgba(148, 0, 211, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Ensures the chart scales properly
+            scales: {
+                x: {
+                    stacked: false,
+                    title: {
+                        display: true,
+                        text: 'Attock-District'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    stacked: false,
+                    title: {
+                        display: true,
+                        text: 'Number of Mouzas'
+                    }
+                }
+            },
+
+
+
+            plugins: {
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    color: 'black',
+                    formatter: (value, context) => {
+                        const label = context.dataset.label;
+                        if (label.includes('Done')) {  // Only show percentage for 'Done' bars
+                            const index = context.dataIndex;
+                            const total = label.includes('Raster') ? totalRasterData[index] : totalVectorData[index];
+                            return getPercentage(value, total);
+                        }
+                        return null; // No label for 'Total' bars
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
     });
+});
+
+
+
+
+// Jhelum tab stats starts from here
+
+// Jhelum barchart performance from r2v
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tehsilLabels = ['PINDI DADAN KHAN', 'JHELUM', 'DINA', 'SOHAWAH'];
+
+    const totalRasterData = [133, 162, 135, 158]; // Total Raster Mouzas
+    const doneRasterData = [111, 143, 112, 147]; // Done Raster Mouzas
+
+    const totalVectorData = [133, 162, 135, 158]; // Total Vector Mouzas
+    const doneVectorData = [6, 58, 26, 24];      // Done Vector Mouzas
+
+    const getPercentage = (done, total) => (total > 0 ? (done / total * 100).toFixed(2) + '%' : '0%');
+
+    const ctx = document.getElementById('jhehlumR2vChart').getContext('2d');
+
+    const jhehlumR2vChart = new Chart(ctx, {
+        type: 'bar',
+
+
+        data: {
+            labels: tehsilLabels,
+            datasets: [
+                {
+                    label: 'Total Raster',
+                    data: totalRasterData,
+                    backgroundColor: 'rgba(173, 216, 230, 0.3)', // Light blue
+                    borderColor: 'rgba(173, 216, 230, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                },
+                {
+                    label: 'Done Raster',
+                    data: doneRasterData,
+                    backgroundColor: 'rgba(0, 191, 255, 0.8)', // Sky blue
+                    borderColor: 'rgba(0, 191, 255, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                },
+                {
+                    label: 'Total Vector',
+                    data: totalVectorData,
+                    backgroundColor: 'rgba(216, 191, 216, 0.3)', // Light purple
+                    borderColor: 'rgba(216, 191, 216, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                },
+                {
+                    label: 'Done Vector',
+                    data: doneVectorData,
+                    backgroundColor: 'rgba(148, 0, 211, 0.8)', // Dark purple
+                    borderColor: 'rgba(148, 0, 211, 1)',
+                    borderWidth: 1,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.8,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    stacked: false,
+                    title: {
+                        display: true,
+                        text: 'Jhehlum-District'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    stacked: false,
+                    title: {
+                        display: true,
+                        text: 'Number of Mouzas'
+                    }
+                }
+            },
+            plugins: {
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    color: 'black',
+                    formatter: (value, context) => {
+                        const label = context.dataset.label;
+                        if (label.includes('Done')) {  // Only show percentage for 'Done' bars
+                            const index = context.dataIndex;
+                            const total = label.includes('Raster') ? totalRasterData[index] : totalVectorData[index];
+                            return getPercentage(value, total);
+                        }
+                        return null; // No label for 'Total' bars
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+});
+
+
+
+
+
+

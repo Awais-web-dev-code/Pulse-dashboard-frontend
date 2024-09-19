@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: poppinsRegular;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 a {
     text-decoration: none;
@@ -173,7 +173,6 @@ a {
 
 
 
-
 /* main body style starts from here */
 
 
@@ -323,8 +322,12 @@ a {
     font-family: poppinsBold;
     font-size: 16px;
     margin-top: 5px;
-
+    
 }
+
+
+
+
 
 
 .charts-div {
@@ -335,6 +338,9 @@ a {
     margin-top: 15px;
 
 }
+
+
+
 
 /* stackChart-div style starts from here */
 
@@ -400,4 +406,19 @@ a {
 .barChart2-div h3 {
     font-family: poppinsBold;
     font-size: 16px;
+}
+
+
+
+
+/* District tabs starts from here */
+
+
+.district-content {
+    display: none; /* All content is hidden by default */
+    width: 83%;
+    margin-left: 17%;
+    padding: 10px 15px 15px 15px;
+
+
 }

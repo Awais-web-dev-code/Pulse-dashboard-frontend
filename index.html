@@ -24,6 +24,7 @@
     </div>
 
     <!-- Side-bar starts from here -->
+
     <div class="main-container">
 
         <div class="db-sidebar">
@@ -43,10 +44,12 @@
                     </div>
 
                     <div class="district-list">
-                        <li onclick="showDistrictMessage('Attock')">Attock</li>
-                        <li onclick="showDistrictMessage('Jhehlum')">Jhehlum</li>
-                        <li onclick="showDistrictMessage('Chakwal')">Chakwal</li>
-                        <li onclick="showDistrictMessage('Rawalpindi')">Rawalpindi</li>
+                        <ul>
+                            <li onclick="showDistrictMessage('Attock')">Attock</li>
+                            <li onclick="showDistrictMessage('Jhehlum')">Jhehlum</li>
+                            <li onclick="showDistrictMessage('Chakwal')">Chakwal</li>
+                            <li onclick="showDistrictMessage('Rawalpindi')">Rawalpindi</li>
+                        </ul>
                     </div>
 
                 </div>
@@ -56,7 +59,7 @@
                     <i class="fa-regular fa-lightbulb"></i>
                     <p class="intro-heading">Introduction:</p>
                 </div>
-               
+
                 <p class="pulse-text">
                     Punjab Urban Land Systems Enhancement (PULSE) modernizes land management in Punjab, Pakistan by
                     digitizing land records, streamlining property registration, and improving transparency for
@@ -69,17 +72,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
         <!-- Main body starts from here -->
+
         <div class="db-mainBody">
             <div class="welcome-div">
                 <h2> <span>Welcome Muhammad!</span> here are summarized insights of project for you</h2>
@@ -137,7 +131,6 @@
             </div>
 
 
-
             <!-- percentageBar-div starts from here -->
 
             <div class="percentageBar-div">
@@ -150,8 +143,6 @@
                 </div>
                 <p class="completed-para">Completed: 191 / 2734</p>
             </div>
-
-
 
 
             <!-- barCharts starts from here -->
@@ -185,9 +176,159 @@
 
 
             </div>
+
+
+
+
+
+
         </div>
 
+
+        <!-- District Tabs -->
+
+
+        <!-- Attock tab content starts from here -->
+
+        <div id="Attock" class="district-content">
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Attock Completion Percentage</h3>
+                <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color"></div>
+                    </div>
+                    <p class="percentage-text"> 6.9% </p>
+                </div>
+                <p class="completed-para">Completed: 191 / 2734</p>
+
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <canvas id="attockR2vChart" style="width: 100%; height: 450px;"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Jhehlum tab content starts from here -->
+
+        <div id="Jhehlum" class="district-content">
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Attock Completion Percentage</h3>
+                <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color"></div>
+                    </div>
+                    <p class="percentage-text"> 6.9% </p>
+                </div>
+                <p class="completed-para">Completed: 191 / 2734</p>
+
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <canvas id="jhehlumR2vChart" style="width: 100%; height: 450px;"></canvas>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Chakwal tab content starts from here -->
+
+        <div id="Chakwal" class="district-content">
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Chakwal Completion Percentage</h3>
+                <!-- <div class="percentageBar-line_div">
+                    <div class="percentageBar_bg">
+                        <div class="percentageBar_color"></div>
+                    </div>
+                    <p class="percentage-text"> 37% </p>
+                </div> -->
+
+                <h1>Developer is woring on it</h1>
+
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <!-- <canvas id="districtBarChart" style="width: 100%; height: 450px;"></canvas> -->
+
+                    <h1>Developer is woring on it</h1>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- Rawalpindi tab content starts from here -->
+
+        <div id="Rawalpindi" class="district-content">
+
+            <!-- percentageBar-div starts from here -->
+            <div class="percentageBar-div">
+                <h3>Rawalpindi Completion Percentage</h3>
+                <!-- <div class="percentageBar-line_div">
+            <div class="percentageBar_bg">
+                <div class="percentageBar_color"></div>
+            </div>
+            <p class="percentage-text"> 37% </p>
+        </div> -->
+
+                <h1>Developer is woring on it</h1>
+
+            </div>
+
+            <!-- stackChart-div starts from here -->
+            <div class="charts-div">
+
+                <div class="barChart1-div">
+                    <h3>Progress From R2v</h3>
+                    <!-- <canvas id="districtBarChart" style="width: 100%; height: 450px;"></canvas> -->
+
+                    <h1>Developer is woring on it</h1>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
     </div>
+
 
 
     </div>
@@ -198,6 +339,8 @@
 <script src="fetchData.js" defer></script>
 
 <script>
+
+
     // Pulse performance Tab functionality
 
 
@@ -228,48 +371,24 @@
 
 
 
+    // Districts Tabs functionality
 
 
+    function showDistrictMessage(district) {
+        // Hide all district content divs
+        var contents = document.querySelectorAll('.district-content');
+        contents.forEach(function (content) {
+            content.style.display = 'none';  // Hide all content
+        });
 
+        // Show the selected district content
+        var selectedContent = document.getElementById(district);
+        if (selectedContent) {
+            selectedContent.style.display = 'block';  // Show the selected district content
+            document.querySelector(".db-mainBody").style.display = 'none';
+        }
+    }
 
-
-    function showDistrictMessage(districtName) {
-    // Get the main body div where the message will be displayed
-    const mainBody = document.querySelector('.db-mainBody');
-    
-    // Clear the current content of the main body
-    mainBody.innerHTML = '';
-
-    // Apply flexbox styles to center content
-    mainBody.style.display = 'flex';
-    mainBody.style.flexDirection = 'column';
-    mainBody.style.alignItems = 'center';
-    mainBody.style.justifyContent = 'center';
-    mainBody.style.height = '100%';  // Ensure it takes the full height
-
-    // Create the new message content
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('district-message');
-    
-    // Create the heading
-    const messageHeading = document.createElement('h1');
-    messageHeading.textContent = `Developer is working and stats for ${districtName} will be live soon`;
-    messageHeading.style.textAlign = 'center';  // Center the text in the heading
-
-    // Create the image
-    const messageImage = document.createElement('img');
-    messageImage.src = 'images/coding-pending.jpg';  // Replace with the correct image path
-    messageImage.alt = `${districtName} image`;  // Alt text for accessibility
-    messageImage.style.marginTop = '10px';  // Add some space between the heading and the image
-    messageImage.style.width = "50%";
-
-    // Append the heading and image to the message div
-    messageDiv.appendChild(messageHeading);
-    messageDiv.appendChild(messageImage);
-    
-    // Append the message div to the main body
-    mainBody.appendChild(messageDiv);
-}
 
 
 
