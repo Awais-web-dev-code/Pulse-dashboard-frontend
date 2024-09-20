@@ -93,12 +93,16 @@ a {
 .sidebar-menuDiv{
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     color: white;
 }
 #overview-button {
     color: white;
+    font-size: 14px;
+
 }
+
+
 #Distict-button {
     font-size: 14px;
     color: rgb(185, 185, 185);
@@ -108,12 +112,14 @@ a {
     display: flex;
     gap: 10px;
     align-items: center;
+    padding-left: 10px;
 }
 .menu-items-iconsDiv_District {
     display: flex;
     gap: 10px;
     align-items: center;
     margin-top: 20px;
+    padding-left: 10px;
 }
 .menu-items-iconsDiv_into {
     display: flex;
@@ -144,18 +150,54 @@ a {
     margin-top: 40px;
     cursor: pointer;
 }
+.district-list div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* background-color: #1BA91E; */
+    margin-top: 10px;
+    color: rgb(185, 185, 185);
+    transition: color 250ms ease;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+}
+.district-list div:hover {
+    color: white;
+    background-color: #383838;
+}
 
+.fa-arrow-right {
+    font-size: 12px;
+    color: rgb(185, 185, 185);
+}
+/* .fa-arrow-right:hover {
+    color: white;
+} */
 .district-list li {
     font-size: 13px;
-    color: rgb(185, 185, 185);
-    margin-top: 15px;
+    /* color: rgb(185, 185, 185); */
     cursor: pointer;
-    margin-left: 25px;
-    transition: color 250ms ease;
+    margin-left: 18px;
+    /* transition: color 250ms ease; */
+    list-style: none;
 }
-.district-list li:hover {
+/* .district-list li:hover {
     color: white;
-}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
 
 .district-message h1 {
     color: #333;
