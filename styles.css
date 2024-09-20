@@ -101,7 +101,11 @@ a {
     font-size: 14px;
 
 }
-
+#layer-2-button {
+    color: rgb(185, 185, 185);
+    font-size: 14px;
+    
+}
 
 #Distict-button {
     font-size: 14px;
@@ -121,12 +125,20 @@ a {
     margin-top: 20px;
     padding-left: 10px;
 }
+.menu-items-iconsDiv_layer-2 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 10px;
+    margin-top: 20px;
+}
 .menu-items-iconsDiv_into {
     display: flex;
     gap: 10px;
     align-items: center;
+   
 }
-.fa-chart-line {
+.fa-chart-line , .fa-layer-group{
     color: rgb(185, 185, 185);
 }
 .fa-lightbulb {
