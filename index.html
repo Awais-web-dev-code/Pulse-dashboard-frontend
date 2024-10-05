@@ -9,6 +9,8 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Pulse Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 
 <body>
@@ -22,6 +24,8 @@
             <i class="fa-solid fa-user"></i>
         </div>
     </div>
+
+
 
     <!-- Side-bar starts from here -->
 
@@ -44,26 +48,26 @@
                     </div>
 
                     <div class="district-list">
-                        
-                            <div style="margin-top: 15px;">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <li onclick="showDistrictMessage('Attock')">Attock</li>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <li onclick="showDistrictMessage('Jhehlum')">Jhehlum</li>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <li onclick="showDistrictMessage('Chakwal')">Chakwal</li>
-                            </div>
-                           
-                            <div>
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <li onclick="showDistrictMessage('Rawalpindi')">Rawalpindi</li>
-                            </div>
 
-                       
+                        <div style="margin-top: 15px;">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <li onclick="showDistrictMessage('Attock')">Attock</li>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <li onclick="showDistrictMessage('Jhehlum')">Jhehlum</li>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <li onclick="showDistrictMessage('Chakwal')">Chakwal</li>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <li onclick="showDistrictMessage('Rawalpindi')">Rawalpindi</li>
+                        </div>
+
+
                     </div>
                     <div class="menu-items-iconsDiv_layer-2">
                         <i class="fa-solid fa-layer-group"></i>
@@ -178,6 +182,7 @@
                 <!-- District overview barchart from PULSE  -->
 
 
+
                 <div class="barChart2-div">
                     <h3>PULSE Approval</h3>
                     <div class="tabs">
@@ -194,11 +199,6 @@
 
 
             </div>
-
-
-
-
-
 
         </div>
 
@@ -341,18 +341,13 @@
 
 
 
-
-
-
     </div>
 
 
 
-    </div>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
 <script src="fetchData.js" defer></script>
 
 <script>
@@ -377,7 +372,7 @@
         evt.currentTarget.className += " active";
     }
 
-    // Set default open tab
+        // Set default open tab
 
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -385,11 +380,7 @@
     });
 
 
-
-
-
     // Districts Tabs functionality
-
 
     function showDistrictMessage(district) {
         // Hide all district content divs
@@ -405,10 +396,6 @@
             document.querySelector(".db-mainBody").style.display = 'none';
         }
     }
-
-
-
-
 
 
 
